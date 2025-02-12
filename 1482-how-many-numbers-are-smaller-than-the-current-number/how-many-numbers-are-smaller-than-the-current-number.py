@@ -6,10 +6,15 @@ class Solution(object):
         """
         count = 0
         l =[]
-        for i in range(len(nums)):
-            for j in range(len(nums)):
-                if nums[j] < nums[i]:
+        i,j =0,1
+  
+        while i <len(nums):
+            if nums[j] < nums[i]:
                     count+=1
-            l.append(count)
-            count =0
-        return l        
+            j+=1
+            if j==len(nums):
+                l.append(count)
+                i,j,count=i+1,0,0
+        return l 
+                
+                 

@@ -4,17 +4,14 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        count = 0
-        l =[]
-        i,j =0,1
-  
-        while i <len(nums):
-            if nums[j] < nums[i]:
-                    count+=1
-            j+=1
-            if j==len(nums):
-                l.append(count)
-                i,j,count=i+1,0,0
-        return l 
+        h ={}
+        a = sorted(nums)
+        for i, v in enumerate(a):
+            if v not in h:
+                h[v]= i
+        l = []
+        for i in nums:
+            l.append(h[i])
+        return l
                 
                  

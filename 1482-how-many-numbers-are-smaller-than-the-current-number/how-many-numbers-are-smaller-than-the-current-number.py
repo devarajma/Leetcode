@@ -5,8 +5,8 @@ class Solution(object):
         :rtype: List[int]
         """
         h ={}
-        a = sorted(nums)
-        for i, v in enumerate(a):
+       
+        for i, v in enumerate(sorted(nums)):
             if v not in h:
                 h[v]= i
         l = []

@@ -11,7 +11,7 @@ class Solution(object):
 
         for i in range(1,len(arr)-1):
             if arr[i-1] < arr[i] > arr[i+1]:
-                l,r=i,i
+                l,r=i-1,i+1
                 while  l > 0 and arr[l-1] < arr[l]:
                     l-=1
                 

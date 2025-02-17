@@ -5,14 +5,14 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         arr.sort()
-        m = float('inf')
+        ans = []
+        min_diff = float('Inf')
+
         for i in range(len(arr)-1):
-            if arr[i+1] - arr[i] < m:
-                m = min(m,arr[i+1] - arr[i])
-        
-        res =[]
-        for i in range(len(arr)-1):
-            if arr[i+1] - arr[i] == m:
-                res.append([arr[i],arr[i+1]])
-        
-        return res
+            diff = arr[i+1]-arr[i]
+            if diff < min_diff:
+                min_diff = diff
+                ans = [[arr[i], arr[i+1]]]
+            elif diff == min_diff:
+                ans.append([arr[i], arr[i+1]])
+        return ans

@@ -9,7 +9,4 @@ class Solution(object):
         while numBottles // numExchange > 0:
             t+=numBottles//numExchange
             numBottles = (numBottles//numExchange) +(numBottles%numExchange)
-            print(numBottles)
-            
-            print(t)
         return t

@@ -6,7 +6,7 @@ class Solution(object):
         :rtype: bool
         """
     
-        if ''.join(sorted(s)) == ''.join(sorted(t)):
+        if ''.join(sorted(s.lower())) == ''.join(sorted(t.lower())):
             return True 
         else:
             return False

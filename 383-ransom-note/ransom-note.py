@@ -19,21 +19,3 @@ class Solution(object):
             else:
                 return False
         return True
-        
-
-
-
-
-
-
-        # s = ransomNote.lower()
-        # t = magazine.lower()
-        # if len(s) == len(t):
-        #     sorts = sorted(s)
-        #     sortt = sorted(t)
-        #     if sortt == sorts:
-        #         return True
-        #     else:
-        #         return False
-        # else:
-        #     return False

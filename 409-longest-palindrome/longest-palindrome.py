@@ -13,7 +13,6 @@ class Solution(object):
                 h[i]=1
         
         for k,v in h.items():
-            print(k,v)
             if v % 2 == 1:
                 t += 1
         if t >1:

@@ -13,9 +13,9 @@ class Solution(object):
                 h[i]=1
         
         for k,v in h.items():
-            if v % 2 == 1:
-                t += 1
-        if t >1:
-            return len(s) - t+1
-        return len(s)
+            print(k,v)
+            t += v//2
+            o+=v%2
+        
+        return 2*t+(1 if o > 0 else 0)
         

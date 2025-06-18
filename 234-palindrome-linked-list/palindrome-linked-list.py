@@ -9,8 +9,10 @@ class Solution(object):
         :type head: Optional[ListNode]
         :rtype: bool
         """
-        f = head
-        s= head
+        if not head or not head.next:
+            return True
+            
+        f = s = head
         while f and f.next:
             f= f.next.next
             s = s.next

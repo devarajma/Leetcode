@@ -10,22 +10,23 @@ class Solution(object):
         :type k: int
         :rtype: Optional[ListNode]
         """
-        if not head or not head.next or k == 0:
+        if not head or not head.next or k==0:
             return head
-            
-        p = head
-        c = 1
-        while p.next:
-            p = p.next
-            c+=1        
-        p.next = head
+        
+        length=1
+        fast= head
+        while fast.next:
+            fast = fast.next
+            length+=1
+        fast.next = head
 
-        r = head
-        i = 1
-        k = k % c
-        while i != (c-k):
-            r = r.next
+        slow,i = head,1
+        k = length - (k % length)
+        print(k)
+        while i != k:
+            slow = slow.next
             i+=1
-        head= r.next
-        r.next = None
+        head = slow.next
+        slow.next = None
         return head
+        

@@ -11,5 +11,5 @@ class Solution(object):
             temp[(i+k)%n] =nums[i]
         for i in range(n):
             nums[i]=temp[i]
-        return nums
+        return temp
             

@@ -5,28 +5,28 @@ class Solution(object):
         :rtype: int
         """
         stack = []
-        result = 0
-        number = 0
-        sign = 1  
-        
-        for c in s:
-            if c.isdigit():
-                number = number * 10 + int(c)
-            elif c in "+-":
-                result += sign * number
-                number = 0
-                sign = 1 if c == '+' else -1
-            elif c == '(':
-
-                stack.append(result)
-                stack.append(sign)
-                result = 0
+        res = 0
+        sign = 1
+        i = 0
+        while i < len(s):
+            if s[i].isdigit():
+                num = 0
+                while i < len(s) and s[i].isdigit() :
+                    num = num * 10 + int(s[i])
+                    i+=1
+                res += sign * num
+                continue
+            elif s[i] =='+':
                 sign = 1
-            elif c == ')':
-                result += sign * number
-                number = 0
-                result *= stack.pop() 
-                result += stack.pop()  
+            elif s[i] == '-':
+                sign = -1
+            elif s[i] == '(':
+                stack.append((res, sign))
+                res = 0 
+                sign = 1
+            elif s[i] == ')':
+                pres,psign = stack.pop()
+                res= res * psign + pres
+            i+=1
+        return res
         
-        result += sign * number
-        return result

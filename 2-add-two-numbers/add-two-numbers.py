@@ -24,5 +24,5 @@ class Solution(object):
 
         if carry:
             res.next = ListNode(carry) 
-            res = res.next
+
         return head.next

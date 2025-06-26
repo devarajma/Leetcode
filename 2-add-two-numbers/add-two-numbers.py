@@ -14,7 +14,6 @@ class Solution(object):
             n2 = cur2.val if cur2 else 0
 
             ans = n1+n2+carry
-            print((ans % 10), ans // 10)
             res.next = ListNode((ans % 10)) 
             res = res.next
             carry = ans // 10

@@ -8,10 +8,17 @@ class Solution(object):
         n = len(nums)
         s = sum(nums[:k])
         m = s
+        l,r = 0, k
 
-        for i in range(k,n):
-            s += nums[i]
-            s -= nums[i - k]
-            m = max(m, s)
+        while r<n:
+            s = s + (nums[r] - nums[l])
+            m = max( m, s)
+            r+=1
+            l+=1
+
+        # for i in range(k,n):
+        #     s += nums[i]
+        #     s -= nums[i - k]
+        #     m = max(m, s)
         return m/float(k)
         

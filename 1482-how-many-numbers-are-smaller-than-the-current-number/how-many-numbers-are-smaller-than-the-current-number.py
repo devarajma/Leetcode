@@ -5,13 +5,11 @@ class Solution(object):
         :rtype: List[int]
         """
         h ={}
-       
         for i, v in enumerate(sorted(nums)):
             if v not in h:
                 h[v]= i
         l = []
+        print(h)
         for i in nums:
             l.append(h[i])
-        return l
-                
-                 
+        return l    

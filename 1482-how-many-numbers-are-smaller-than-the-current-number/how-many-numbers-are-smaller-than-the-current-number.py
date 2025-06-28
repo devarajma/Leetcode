@@ -9,7 +9,7 @@ class Solution(object):
             if v not in h:
                 h[v]= i
         l = []
-        print(h)
+
         for i in nums:
             l.append(h[i])
         return l    

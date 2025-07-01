@@ -6,7 +6,7 @@ class Solution(object):
         """
         c = 0
         for i in nums:
-            l =0
+            l = 0
             while i:
                 i = i // 10
                 l+=1

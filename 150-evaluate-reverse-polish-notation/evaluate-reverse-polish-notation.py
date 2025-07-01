@@ -6,16 +6,17 @@ class Solution(object):
         """
         stk = []
         for i in tokens:
-            if i == "+":
-                stk.append(stk.pop()+stk.pop())
-            elif i =="-":
-                n = stk.pop()
-                stk.append(stk.pop()-n)
-            elif i=="*":
-                stk.append(stk.pop() *stk.pop())
-            elif i=="/":
-                n = stk.pop()
-                stk.append(int(float(stk.pop()) / n))
+            if i in {"+","-","*","/"}:
+                b = stk.pop()
+                a = stk.pop()
+                if i == "+":
+                    stk.append(a+b)
+                elif i == "-":
+                    stk.append(a - b)
+                elif i == "*":
+                    stk.append(a * b)
+                else:
+                    stk.append(int(float(a) / b))
             else:
                 stk.append(int(i))
         return stk[-1]

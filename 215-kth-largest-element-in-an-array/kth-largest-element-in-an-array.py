@@ -5,11 +5,11 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        arr = [ -i for i in nums]
-        heapq.heapify(arr)
+        nums = [ -i for i in nums]
+        heapq.heapify(nums)
 
         for _ in range(k):
-            val = heapq.heappop(arr)
-        
+            val = heapq.heappop(nums)
+
         return -val
         

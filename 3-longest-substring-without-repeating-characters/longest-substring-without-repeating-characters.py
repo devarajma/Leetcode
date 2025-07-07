@@ -4,14 +4,16 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        i = m = 0
-        l = set()
-        
-        for j in range(len(s)):
-            while s[j] in l:
-                l.remove(s[i])
+        mx = i = 0
+        lset = set()
+
+        for j in s:
+            while j in lset:
+                lset.remove(s[i])
                 i+=1
-            l.add(s[j])
-            m = max(m, j-i+1)
-        return m
+            lset.add(j)
+            mx = max(mx,len(lset))
+            
+        return mx
+
         

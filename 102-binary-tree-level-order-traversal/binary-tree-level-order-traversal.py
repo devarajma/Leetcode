@@ -10,31 +10,24 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: List[List[int]]
         """
-        q = deque()
-        q.append(root)
-        sub = []
-        res = []
-        if not root:
-            return res
-        res = [[root.val]]
         
-        while q:    
+        if not root:
+            return []
+
+        res = []
+        q = deque([root])
+
+        
+        while q:   
+            sub = [] 
             for _ in range(len(q)):
                 root = q.popleft()
+                sub.append(root.val)
 
-                if root.left:
-                    q.append(root.left)
-                    sub.append(root.left.val)
-                    print(sub)
+                if root.left: q.append(root.left)
+                if root.right: q.append(root.right)
 
-                if root.right: 
-                    q.append(root.right)
-                    sub.append(root.right.val)
-                    print(sub)
+            res.append(sub)
 
-            if sub: 
-                res.append(sub)
-                print(sub)
-                sub =[]
         return res
         

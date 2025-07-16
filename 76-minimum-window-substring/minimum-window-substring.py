@@ -8,11 +8,9 @@ class Solution(object):
         
         i = j = 0
         left = -1
-        cnt = 0
         cht = {}
         formed = 0
         m = float('inf')
-        res =(-1,0,0)
 
         ht = Counter(t) 
         
@@ -26,7 +24,6 @@ class Solution(object):
                 if (j - i + 1) < m:
                     m = j - i + 1
                     left = i
-                    cnt = m
 
                 cht[s[i]] -= 1
                 if s[i] in ht and cht[s[i]] < ht[s[i]]:
@@ -36,4 +33,4 @@ class Solution(object):
 
             j += 1
 
-        return "" if left == -1 else s[left:left + cnt]
+        return "" if left == -1 else s[left:left + m]

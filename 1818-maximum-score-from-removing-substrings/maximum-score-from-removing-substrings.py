@@ -27,5 +27,6 @@ class Solution(object):
         _, s2 = check_score(s, second[0], second[1])
 
         return s1+s2
-        
+        # Time Complexity : O(N)
+        # Space Complexity: O(N)
         

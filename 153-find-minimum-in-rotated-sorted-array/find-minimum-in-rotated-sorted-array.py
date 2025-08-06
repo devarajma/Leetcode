@@ -13,5 +13,3 @@ class Solution(object):
             else:
                 r = m
         return nums[l]
-        
-        

@@ -7,7 +7,8 @@ class Solution(object):
         :rtype: str
         """
     
-        for i in s:
-            t = t.replace(i,"",1)
-        return t
+        for i in t:
+            if s.count(i) != t.count(i):
+                return i
+
         

@@ -4,19 +4,9 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
-        r = 0
-        if x < 0:
-            x *= -1
-            while x:
-                r = r*10 + (x%10)
-                print(r)
-                x = x//10
-            r *= -1
-        else:
-            while x:
-                r = r*10 + (x%10)
-                print(r)
-                x = x//10
+        s = -1 if x < 0 else 1
+
+        r = int(str(abs(x))[::-1]) * s
 
         if -2**31 <= r <= 2**31 - 1: 
             return r

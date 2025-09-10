@@ -20,6 +20,8 @@ class Solution(object):
         b.reverse()
 
         res = 0
+        print(a)
+        print(b)
         for i in range(len(height)):
             res += (min(a[i],b[i])-height[i])
 

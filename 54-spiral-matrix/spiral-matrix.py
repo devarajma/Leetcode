@@ -13,7 +13,6 @@ class Solution(object):
                 res.append(matrix[t][i])
             t+=1
             
-            
             for i in range(t, b):
                 res.append(matrix[i][r-1])
             r-=1

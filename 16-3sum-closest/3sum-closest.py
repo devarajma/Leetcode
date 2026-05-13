@@ -13,15 +13,12 @@ class Solution:
 
                 s = nums[i] + nums[left] + nums[right]
 
-                # update closest
                 if abs(target - s) < abs(target - closest):
                     closest = s
 
-                # exact match
                 if s == target:
                     return s
 
-                # move pointers
                 elif s < target:
                     left += 1
 
